@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { useAuth } from "../context/AuthContext";
 
-const API_URL = "https://clinicaproxdomg.free.nf";
+const API_URL = "https://clinicaproxdomg.free.nf/api";
 
 export const UsuariosPage = () => {
   const { user } = useAuth();

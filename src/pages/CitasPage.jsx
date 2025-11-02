@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { useAuth } from "../context/AuthContext";
 import SearchSelect from "../components/SearchSelect";
 
-const API_URL = "https://clinicaproxdomg.free.nf";
+const API_URL = "https://clinicaproxdomg.free.nf/api";
 
 export const CitasPage = () => {
   const { user } = useAuth();
