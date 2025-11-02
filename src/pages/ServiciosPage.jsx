@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useAuth } from "../context/AuthContext";
-
-const API_URL = "https://clinica-api-u24q.onrender.com";
+const API_URL = import.meta.env.API_URL;
 
 export const ServiciosPage = () => {
   const { user } = useAuth();

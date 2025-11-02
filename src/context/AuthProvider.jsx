@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { AuthContext } from "./AuthContext";
+const API_URL = import.meta.env.API_URL;
 
 export const AuthProvider = ({ children }) => {
+
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const login = async (correo, password) => {
     try {
-      const response = await fetch("https://clinica-api-u24q.onrender.com/auth/login", {
+      const response = await fetch(`${API_URL}/auth/login`, {
         method: "POST",
         credentials: "include",
         headers: {
@@ -31,7 +33,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await fetch("https://clinica-api-u24q.onrender.com/auth/logout", {
+      await fetch(`${API_URL}/auth/logout`, {
         method: "POST",
         credentials: "include",
       });
@@ -43,7 +45,7 @@ export const AuthProvider = ({ children }) => {
 
   const checkAuth = async () => {
     try {
-      const response = await fetch("https://clinica-api-u24q.onrender.com/auth/verificar", {
+      const response = await fetch(`${API_URL}/auth/verificar`, {
         credentials: "include",
       });
       const data = await response.json();
@@ -67,7 +69,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     try {
-      const response = await fetch("https://clinica-api-u24q.onrender.com/auth/registrar", {
+      const response = await fetch(`${API_URL}/auth/registrar`, {
         method: "POST",
         credentials: "include",
         headers: {
