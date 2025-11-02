@@ -1,6 +1,6 @@
 import './App.css';
 import { AuthProvider } from './context/AuthProvider';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Dashboard } from './components/Dashboard';
 import { LoginForm } from './components/LoginForm';
 import { ProtectedRoute } from './components/ProtectedRoute';
@@ -14,7 +14,7 @@ import { UsuariosPage } from './pages/UsuariosPage';
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route path="/login" element={<LoginForm />} />
           <Route 
@@ -72,7 +72,7 @@ function App() {
           />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </AuthProvider>
   );
 }
