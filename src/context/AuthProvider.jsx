@@ -3,9 +3,9 @@ import { AuthContext } from "./AuthContext";
 const API_URL = import.meta.env.VITE_API_URL;
 
 export const AuthProvider = ({ children }) => {
-
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const login = async (correo, password) => {
     try {
@@ -21,10 +21,12 @@ export const AuthProvider = ({ children }) => {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Error en el inicio de sesión");
+        setError(data.error);
+        throw new Error(data.error || "Error en el inicio de sesión");
       }
 
       setUser(data.usuario);
+      setError(null);
       return data;
     } catch (error) {
       console.error(error);
@@ -81,9 +83,11 @@ export const AuthProvider = ({ children }) => {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Error al registrar usuario");
+        setError(data.error);
+        throw new Error(data.error || "Error al registrar usuario");
       }
 
+      setError(null);
       return data;
     } catch (error) {
       console.error(error);
@@ -100,6 +104,7 @@ export const AuthProvider = ({ children }) => {
     logout,
     registerUser,
     loading,
+    error,
   };
 
   return (
