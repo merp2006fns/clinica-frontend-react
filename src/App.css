@@ -5,9 +5,9 @@
     font-family: "montserrat";
   }
 
-  body {
-    @apply bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 min-h-screen;
-  }
+  /* body {
+    @apply bg-cover bg-center bg-no-repeat" style="background-image: url('https://i.pinimg.com/1200x/a4/02/b0/a402b016289466ff0953a81fc82a6db3.jpg') text-gray-800 dark:text-gray-200 min-h-screen;
+  } */
 
   nav {
     @apply bg-green-600 text-white shadow-md dark:bg-green-800;

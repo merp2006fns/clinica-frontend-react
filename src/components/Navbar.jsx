@@ -20,7 +20,7 @@ export const Navbar = () => {
   const canAccessUsuarios = user?.rol === "admin";
 
   return (
-    <nav className="bg-green-600 text-white shadow-md dark:bg-green-800">
+    <nav className="bg-black/50 text-white shadow-md ">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* Brand */}
         <div className="flex items-center space-x-3">
