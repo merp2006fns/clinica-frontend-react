@@ -38,12 +38,12 @@ export const LoginForm = () => {
         height: "100vh",
       }}
     >
-      <div className="w-full max-w-md bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+      <div className="w-full max-w-md bg-white/50 dark:bg-gray-800/50 p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4 text-center">
           Iniciar Sesión
         </h2>
         {error && <p className="text-center text-red-600">{error}</p>}
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4 bg-white/2 dark:bg-gray-800/2  ">
           <div>
             <label htmlFor="correo">Correo:</label>
             <input

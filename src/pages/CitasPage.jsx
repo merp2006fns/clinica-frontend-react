@@ -305,7 +305,7 @@ export const CitasPage = () => {
       {error && <p style={{ color: "red" }}>{error}</p>}
       {canCreate && (
         <button
-          className="mb-4 w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
+          className="mb-4 w-full sm:w-auto bg-cyan-600 hover:bg-cyan-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
           onClick={() => setShowForm(true)}
         >
           Nueva Cita
@@ -419,7 +419,7 @@ export const CitasPage = () => {
             <div className="md:col-span-2 flex gap-2">
               <button
                 type="submit"
-                className="max-h-10 bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
+                className="max-h-10 bg-cyan-600 hover:bg-cyan-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
               >
                 Guardar
               </button>
@@ -512,14 +512,14 @@ export const CitasPage = () => {
                 )}
               </tr>
             </thead>
-            <tbody>
+            <tbody class="border-b border-white/10 bg-black/5 dark:bg-black-800/20 backdrop-blur-sm ">
               {citas.map((cita) => (
                 <tr
                   key={cita.id}
-                  className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-150"
+                  className="border-b border-gray-200 dark:border-gray-700/60  transition-colors duration-150"
                 >
                   <td className="px-4 py-3 text-sm">{cita.id}</td>
-                  <td className="px-4 py-3 text-sm">
+                  <td className="px-4 py-3 text-sm ">
                     {cita.paciente_nombre} {cita.paciente_apellido}
                   </td>
                   <td className="px-4 py-3 text-sm">{cita.servicio_nombre}</td>

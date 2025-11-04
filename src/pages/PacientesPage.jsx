@@ -139,7 +139,7 @@ export const PacientesPage = () => {
       {error && <p style={{ color: "red" }}>{error}</p>}
       {canCreate && (
         <button
-          className="mb-4 w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
+          className="mb-4 w-full sm:w-auto bg-cyan-600 hover:bg-cyan-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
           onClick={() => setShowForm(true)}
         >
           Nuevo Paciente
