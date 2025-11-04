@@ -172,7 +172,7 @@ export const UsuariosPage = () => {
                   setFormData({ ...formData, nombre: e.target.value })
                 }
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="input-form"
               />
             </div>
             <div>
@@ -184,7 +184,7 @@ export const UsuariosPage = () => {
                   setFormData({ ...formData, correo: e.target.value })
                 }
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="input-form"
               />
             </div>
             <div>
@@ -197,7 +197,7 @@ export const UsuariosPage = () => {
                 }
                 required={!editId}
                 placeholder={editId ? "Dejar en blanco para no cambiar" : ""}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="input-form"
               />
             </div>
             <div>
@@ -208,7 +208,7 @@ export const UsuariosPage = () => {
                   setFormData({ ...formData, rol: e.target.value })
                 }
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="input-form"
               >
                 <option value="recepcion">Recepción</option>
                 <option value="medico">Médico</option>
@@ -263,7 +263,7 @@ export const UsuariosPage = () => {
       ) : (
         <div className="overflow-x-auto">
           <table className="min-w-full border-collapse bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden">
-            <thead className="bg-green-500 text-white dark:bg-green-700">
+            <thead className="bg-cyan-500 text-white dark:bg-cyan-700">
               <tr>
                 <th className="px-4 py-3 text-left text-sm font-semibold">
                   ID

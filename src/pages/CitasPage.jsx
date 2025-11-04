@@ -313,7 +313,9 @@ export const CitasPage = () => {
       )}
       {showForm && (editId ? canEdit : canCreate) && (
         <div className="mb-6">
-          <h2 className="text-xl font-bold mb-4">{editId ? "Editar" : "Nueva"} Cita</h2>
+          <h2 className="text-xl font-bold mb-4">
+            {editId ? "Editar" : "Nueva"} Cita
+          </h2>
           <form
             onSubmit={handleSubmit}
             className="grid grid-cols-1 md:grid-cols-2 gap-4"
@@ -374,7 +376,7 @@ export const CitasPage = () => {
                   setFormData({ ...formData, fecha_hora: e.target.value })
                 }
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="input-form"
               />
             </div>
             <div>
@@ -386,7 +388,7 @@ export const CitasPage = () => {
                     setFormData({ ...formData, estado: e.target.value })
                   }
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="input-form"
                 >
                   <option value="programada">Programada</option>
                   <option value="confirmada">Confirmada</option>
@@ -400,7 +402,7 @@ export const CitasPage = () => {
                   type="text"
                   value="Programada"
                   disabled
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-100"
+                  className="input-form"
                 />
               )}
             </div>
@@ -411,7 +413,7 @@ export const CitasPage = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, notas: e.target.value })
                 }
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="input-form"
               />
             </div>
             <div className="md:col-span-2 flex gap-2">
@@ -480,7 +482,7 @@ export const CitasPage = () => {
       ) : (
         <div className="overflow-x-auto">
           <table className="min-w-full border-collapse bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden">
-            <thead className="bg-green-500 text-white dark:bg-green-700">
+            <thead className="bg-cyan-500 text-white dark:bg-cyan-700">
               <tr>
                 <th className="px-4 py-3 text-left text-sm font-semibold">
                   ID

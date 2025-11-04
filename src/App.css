@@ -1,20 +1,24 @@
 @import "tailwindcss";
 
+/* Define a custom variant for dark mode */
+@custom-variant dark (&:is(.dark *));
+
 @layer base {
   html {
     font-family: "montserrat";
   }
-
   body {
-    @apply bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 min-h-screen;
+    @apply bg-black/35 min-h-screen dark:text-gray-200 bg-cover bg-center bg-no-repeat text-gray-800;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://i.pinimg.com/1200x/a4/02/b0/a402b016289466ff0953a81fc82a6db3.jpg");
   }
 
   nav {
-    @apply bg-green-600 text-white shadow-md dark:bg-green-800;
+    @apply bg-black/30 text-white shadow-md border-b-2 border-b-gray-500;
   }
 
   nav a {
-    @apply text-white hover:text-green-200 transition-colors duration-200 py-2 px-3 rounded-md hover:bg-green-700 dark:hover:bg-green-900;
+    @apply text-white hover:text-green-200 transition-colors duration-200 py-2 px-3 rounded-md block hover:bg-gray-500/20 dark:hover:bg-gray-400/20;
   }
 
   form {
@@ -29,16 +33,20 @@
     @apply block text-sm font-medium text-gray-700 dark:text-gray-300;
   }
 
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  input[type="tel"],
-  input[type="number"],
-  input[type="date"],
-  input[type="datetime-local"],
-  select,
-  textarea {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+  input[type="text"]:not(.input-form),
+  input[type="email"]:not(.input-form),
+  input[type="password"]:not(.input-form),
+  input[type="tel"]:not(.input-form),
+  input[type="number"]:not(.input-form),
+  input[type="date"]:not(.input-form),
+  input[type="datetime-local"]:not(.input-form),
+  select:not(.input-form),
+  textarea:not(.input-form) {
+    @apply w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-gray-500 border-gray-400 dark:bg-gray-700 dark:border-gray-600 text-white;
+  }
+
+  .input-form {
+    @apply bg-white border-gray-300 text-black w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white;
   }
 
   table {
@@ -62,15 +70,15 @@
   }
 
   h1 {
-    @apply text-3xl font-bold text-gray-900 dark:text-white mb-6;
+    @apply text-3xl font-bold text-white mb-6;
   }
 
   h2 {
-    @apply text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4;
+    @apply text-2xl font-bold text-gray-100 mb-4;
   }
 
   h3 {
-    @apply text-xl font-semibold text-gray-700 dark:text-gray-200 mb-3;
+    @apply text-xl font-semibold text-gray-200 mb-3;
   }
 
   .search-select-container {

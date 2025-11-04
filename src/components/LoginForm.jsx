@@ -23,14 +23,25 @@ export const LoginForm = () => {
       const origin = location.state?.from?.pathname || "/";
       navigate(origin);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white dark:bg-gray-900 px-4">
+    <div
+      className="flex items-center justify-center min-h-screen bg-white dark:bg-gray-900 px-4"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.pinimg.com/1200x/a4/02/b0/a402b016289466ff0953a81fc82a6db3.jpg")`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "100%",
+        height: "100vh",
+      }}
+    >
       <div className="w-full max-w-md bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4 text-center">Iniciar Sesión</h2>
+        <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4 text-center">
+          Iniciar Sesión
+        </h2>
         {error && <p className="text-center text-red-600">{error}</p>}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -42,7 +53,7 @@ export const LoginForm = () => {
               autoComplete="email"
               onChange={(e) => setCorreo(e.target.value)}
               required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="input-form"
             />
           </div>
           <div>
@@ -54,10 +65,15 @@ export const LoginForm = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
               autoComplete="current-password"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="input-form"
             />
           </div>
-          <button type="submit" className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:bg-green-700 dark:hover:bg-green-600">Iniciar Sesión</button>
+          <button
+            type="submit"
+            className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:bg-green-700 dark:hover:bg-green-600"
+          >
+            Iniciar Sesión
+          </button>
         </form>
       </div>
     </div>

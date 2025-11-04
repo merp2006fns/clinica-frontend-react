@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { ThemeToggle } from "./ThemeToggle";
 
 export const Navbar = () => {
   const { user, logout } = useAuth();
@@ -20,9 +21,8 @@ export const Navbar = () => {
   const canAccessUsuarios = user?.rol === "admin";
 
   return (
-    <nav className="bg-green-600 text-white shadow-md dark:bg-green-800">
+    <nav>
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Brand */}
         <div className="flex items-center space-x-3">
           <button
             onClick={() => setOpen((s) => !s)}
@@ -30,7 +30,6 @@ export const Navbar = () => {
             aria-expanded={open}
             className="md:hidden p-2 rounded-md hover:bg-green-500/20 focus:outline-none focus:ring-2 focus:ring-white"
           >
-            {/* Hamburger / Close icon */}
             {open ? (
               <svg
                 className="w-6 h-6"
@@ -78,56 +77,68 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/* Desktop menu */}
-        <ul className="hidden md:flex items-center space-x-4">
-          <li>
-            <Link to="/">
-              Dashboard
-            </Link>
-          </li>
-          {canAccessCitas && (
+        <div className="hidden md:flex items-center space-x-4">
+          <ul className="flex items-center space-x-4">
             <li>
-              <Link to="/citas">
-                Citas
+              <Link
+                to="/"
+              >
+                Dashboard
               </Link>
             </li>
-          )}
-          {canAccessPacientes && (
+            {canAccessCitas && (
+              <li>
+                <Link
+                  to="/citas"
+                >
+                  Citas
+                </Link>
+              </li>
+            )}
+            {canAccessPacientes && (
+              <li>
+                <Link
+                  to="/pacientes"
+                >
+                  Pacientes
+                </Link>
+              </li>
+            )}
+            {canAccessServicios && (
+              <li>
+                <Link
+                  to="/servicios"
+                >
+                  Servicios
+                </Link>
+              </li>
+            )}
+            {canAccessUsuarios && (
+              <li>
+                <Link
+                  to="/usuarios"
+                >
+                  Usuarios
+                </Link>
+              </li>
+            )}
             <li>
-              <Link to="/pacientes">
-                Pacientes
-              </Link>
+              <ThemeToggle />
             </li>
-          )}
-          {canAccessServicios && (
-            <li>
-              <Link to="/servicios">
-                Servicios
-              </Link>
-            </li>
-          )}
-          {canAccessUsuarios && (
-            <li>
-              <Link to="/usuarios">
-                Usuarios
-              </Link>
-            </li>
-          )}
-          <li>
-            <button
-              onClick={handleLogout}
-              className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md"
-            >
-              Cerrar Sesión
-            </button>
-          </li>
-        </ul>
+          </ul>
+
+          <button
+            onClick={handleLogout}
+            className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md"
+          >
+            Cerrar Sesión
+          </button>
+        </div>
       </div>
 
-      {/* Mobile panel */}
       <div
         id="main-menu"
-        className={`md:hidden bg-green-600/95 border-t border-green-700 overflow-hidden transition-[max-height,opacity] duration-200 ease-out ${
+        className={`md:hidden bg-green-600/95 dark:bg-green-700/95 border-t border-green-700 dark:border-green-800 overflow-hidden transition-[max-height,opacity] duration-200 ease-out ${
           open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -136,7 +147,6 @@ export const Navbar = () => {
             <Link
               to="/"
               onClick={closeMenu}
-              className="block py-2 px-2 rounded hover:bg-green-500/20"
             >
               Dashboard
             </Link>
@@ -185,6 +195,9 @@ export const Navbar = () => {
               </Link>
             </li>
           )}
+          <li>
+            <ThemeToggle />
+          </li>
           <li>
             <button
               onClick={() => {
