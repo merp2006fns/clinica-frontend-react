@@ -64,6 +64,7 @@ export default function SearchSelect({
         onChange={(e) => setQuery(e.target.value)}
         placeholder={placeholder}
         disabled={!enabled}
+        className="input-form"
       />
       <select
         name={name}
@@ -75,6 +76,7 @@ export default function SearchSelect({
           onChange(selectedId);
         }}
         disabled={!enabled}
+        className="input-form"
       >
         <option value="">{loading ? "Cargando..." : "Selecciona"}</option>
         {options.map((opt) => (
