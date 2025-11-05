@@ -1,7 +1,8 @@
 import "./App.css";
 import { AuthProvider } from "./context/AuthProvider";
 import {
-  HashRouter as Router,
+  HashRouter,
+  BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
