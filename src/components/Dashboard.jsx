@@ -28,7 +28,7 @@ export const Dashboard = () => {
           {canAccessCitas && (
             <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-200">
               <h3>
-                <Link class="text-cyan-500" to="/citas">Gestionar Citas</Link>
+                <Link className="text-cyan-500" to="/citas">Gestionar Citas</Link>
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
                 Ver y gestionar todas las citas médicas
@@ -38,7 +38,7 @@ export const Dashboard = () => {
           {canAccessPacientes && (
             <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-200">
               <h3>
-                <Link class="text-cyan-500" to="/pacientes">Gestionar Pacientes</Link>
+                <Link className="text-cyan-500" to="/pacientes">Gestionar Pacientes</Link>
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
                 Ver y gestionar el registro de pacientes
@@ -48,7 +48,7 @@ export const Dashboard = () => {
           {canAccessServicios && (
             <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-200">
               <h3>
-                <Link class="text-cyan-500" to="/servicios">Gestionar Servicios</Link>
+                <Link className="text-cyan-500" to="/servicios">Gestionar Servicios</Link>
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
                 Administrar los servicios médicos disponibles
@@ -58,7 +58,7 @@ export const Dashboard = () => {
           {canAccessUsuarios && (
             <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-200">
               <h3>
-                <Link class="text-cyan-500" to="/usuarios">Gestionar Usuarios</Link>
+                <Link className="text-cyan-500" to="/usuarios">Gestionar Usuarios</Link>
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
                 Administrar usuarios del sistema
