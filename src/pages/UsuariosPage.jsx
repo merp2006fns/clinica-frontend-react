@@ -185,6 +185,7 @@ export const UsuariosPage = () => {
                 }
                 required
                 className="input-form"
+                disabled={formData.correo === "admin@clinica.com"}
               />
             </div>
             <div>
@@ -209,6 +210,7 @@ export const UsuariosPage = () => {
                 }
                 required
                 className="input-form"
+                disabled={formData.correo === user?.correo}
               >
                 <option value="recepcion">Recepción</option>
                 <option value="medico">Médico</option>
@@ -296,13 +298,15 @@ export const UsuariosPage = () => {
                   <td className="px-4 py-3 text-sm">{usuario.rol}</td>
                   {canManage && (
                     <td className="px-4 py-3 text-sm">
-                      <button
-                        className="mr-2 bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-md"
-                        onClick={() => handleEdit(usuario)}
-                      >
-                        Editar
-                      </button>
-                      {usuario.id !== user?.id && (
+                      {(user?.id === 1 || usuario.id !== 1) && (
+                        <button
+                          className="mr-2 bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-md"
+                          onClick={() => handleEdit(usuario)}
+                        >
+                          Editar
+                        </button>
+                      )}
+                      {usuario.id !== user?.id && usuario.id !== 1 && (
                         <button
                           className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md"
                           onClick={() => handleDelete(usuario.id)}

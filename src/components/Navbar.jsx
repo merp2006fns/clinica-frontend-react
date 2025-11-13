@@ -138,7 +138,7 @@ export const Navbar = () => {
 
       <div
         id="main-menu"
-        className={`md:hidden bg-green-600/95 dark:bg-green-700/95 border-t border-green-700 dark:border-green-800 overflow-hidden transition-[max-height,opacity] duration-200 ease-out ${
+        className={`md:hidden bg-cyan-600/95 dark:bg-cyan-700/95 border-t border-cyan-700 dark:border-cyan-800 overflow-hidden transition-[max-height,opacity] duration-200 ease-out ${
           open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >

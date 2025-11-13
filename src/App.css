@@ -5,11 +5,11 @@
 
 @layer base {
   html {
-    font-family: "montserrat";
+    font-family: "montserrat", system-ui;
   }
   body {
     @apply bg-black/35 min-h-screen dark:text-gray-200 bg-cover bg-center bg-no-repeat text-gray-800;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url("https://i.pinimg.com/1200x/a4/02/b0/a402b016289466ff0953a81fc82a6db3.jpg");
   }
 
@@ -42,11 +42,11 @@
   input[type="datetime-local"]:not(.input-form),
   select:not(.input-form),
   textarea:not(.input-form) {
-    @apply w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-gray-500 border-gray-400 dark:bg-gray-700 dark:border-gray-600 text-white;
+    @apply w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 bg-gray-500 border-gray-400 dark:bg-gray-700 dark:border-gray-600 text-white;
   }
 
   .input-form {
-    @apply bg-white border-gray-300 text-black w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+    @apply bg-white border-gray-300 text-black w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white;
   }
 
   table {
